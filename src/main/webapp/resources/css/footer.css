@@ -1,0 +1,115 @@
+
+.site-footer {
+
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+
+
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    color: #ffb703;
+    margin: 0 0 10px 0;
+}
+
+.contact-info address {
+    margin: 0;
+}
+
+.contact-info p,
+.contact-info a,
+.action-buttons button{
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info i,
+.action-buttons i {
+    margin-right: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    background-color: #ffb703;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #e6a500;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+.contact-info address {
+    margin: 0 0 20px 0; /* Add some bottom margin for spacing */
+}
+
+.contact-info address a {
+    color: #FFD700; /* Gold color for the email link */
+    text-decoration: none; /* Optional: removes the underline */
+}
+
+.contact-info address a:hover {
+    color: #FFA500; /* Darker gold on hover for interaction feedback */
+}
+.social-media a:hover {
+    color: #ffb703;
+}
+
+@media (max-width: 768px) {
+
+    .contact-info,
+    .action-buttons,
+    .social-media {
+        flex-direction: column;
+    }
+    .site-footer{
+        margin-top: 23rem;
+        height: 100vh;
+    }
+    .action-buttons {
+        width: 100%;
+    }
+
+    .action-btn {
+        width: 80%; /* Makes buttons wider on smaller screens */
+        margin-bottom: 10px;
+    }
+}
+
+

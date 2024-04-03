@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g.projektdt170g.models.BookingEntity">
+        <table name="booking" schema="dt170gprojekt" catalog=""/>
+        <attributes>
+            <id name="bookingId">
+                <column name="booking_id" precision="11"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="telephone">
+                <column name="telephone" length="12"/>
+            </basic>
+            <basic name="amount">
+                <column name="amount" precision="11"/>
+            </basic>
+            <basic name="date">
+                <column name="date" precision="-1"/>
+            </basic>
+            <basic name="time">
+                <column name="time" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

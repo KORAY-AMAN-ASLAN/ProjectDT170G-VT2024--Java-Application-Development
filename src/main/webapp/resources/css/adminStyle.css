@@ -1,0 +1,48 @@
+.admin-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin: 10px;
+    background-color: #f0f0f0; /* Example background color */
+    border: 1px solid #ddd; /* Example border */
+    border-radius: 5px; /* Rounded corners */
+}
+.back-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin: 10px;
+    background-color: #ffb703; /* Example background color */
+    border: 1px solid #ddd; /* Example border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.admin-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* This will align the form and the list at the top */
+}
+
+.form-container {
+    /* Styles for your form */
+    flex-grow: 1; /* Allows the form to grow and use up space as needed */
+}
+
+.lunch-list-container {
+    /* Styles for your list container */
+    flex-grow: 1; /* Allows the list to grow and use up space as needed */
+    margin-left: 20px; /* Adds some space between the form and the list */
+}
+.message {
+    display: block;
+    width: 200px;
+    height: 50px;
+    font-size: 32px;
+    margin: 10px;
+    color: green;
+    clear-side:both;
+    clear: both;
+
+}
+
+/* Keep your existing .

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g.projektdt170g.models.ReceiptEntity">
+        <table name="receipt" schema="dt170gprojekt" catalog=""/>
+        <attributes>
+            <id name="receiptId">
+                <column name="receipt_id" precision="11"/>
+            </id>
+            <basic name="date">
+                <column name="date" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

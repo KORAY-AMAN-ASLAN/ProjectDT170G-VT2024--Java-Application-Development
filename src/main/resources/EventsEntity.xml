@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g.projektdt170g.models.EventsEntity">
+        <table name="events" schema="dt170gprojekt" catalog=""/>
+        <attributes>
+            <id name="eventId">
+                <column name="event_id" precision="11"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="date">
+                <column name="date" precision="-1"/>
+            </basic>
+            <basic name="price">
+                <column name="price" precision="11"/>
+            </basic>
+            <basic name="description">
+                <column name="description"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

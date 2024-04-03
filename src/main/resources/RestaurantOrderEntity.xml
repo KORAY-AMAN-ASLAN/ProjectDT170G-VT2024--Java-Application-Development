@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g.projektdt170g.models.RestaurantOrderEntity">
+        <table name="restaurant_order" schema="dt170gprojekt" catalog=""/>
+        <attributes>
+            <id name="restaurantOrderId">
+                <column name="restaurant_order_id" precision="11"/>
+            </id>
+            <basic name="statusAppetizer">
+                <column name="status_appetizer"/>
+            </basic>
+            <basic name="statusMain">
+                <column name="status_main"/>
+            </basic>
+            <basic name="statusDessert">
+                <column name="status_dessert"/>
+            </basic>
+            <basic name="restaurantTableId">
+                <column name="restaurant_table_id" precision="11"/>
+            </basic>
+            <basic name="comment">
+                <column name="comment"/>
+            </basic>
+            <basic name="orderStatus">
+                <column name="order_status"/>
+            </basic>
+            <one-to-many name="purchasedALaCartesByRestaurantOrderId" mapped-by="restaurantOrderByOrderId"
+                         target-entity="se.miun.dt170g.projektdt170g.models.PurchasedALaCarteEntity"/>
+            <one-to-many name="purchasedDrinksByRestaurantOrderId" mapped-by="restaurantOrderByOrderId"
+                         target-entity="se.miun.dt170g.projektdt170g.models.PurchasedDrinksEntity"/>
+        </attributes>
+    </entity>
+</entity-mappings>

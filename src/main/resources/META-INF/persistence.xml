@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="default">
+        <jta-data-source>jdbc/database</jta-data-source>
+        <mapping-file>ALaCarteMenuEntity.xml</mapping-file>
+        <mapping-file>BookingEntity.xml</mapping-file>
+        <mapping-file>DrinksEntity.xml</mapping-file>
+        <mapping-file>EmployeeEntity.xml</mapping-file>
+        <mapping-file>EventsEntity.xml</mapping-file>
+        <mapping-file>LunchMenuEntity.xml</mapping-file>
+        <mapping-file>PurchasedALaCarteEntity.xml</mapping-file>
+        <mapping-file>PurchasedDrinksEntity.xml</mapping-file>
+        <mapping-file>ReceiptEntity.xml</mapping-file>
+        <mapping-file>RestaurantOrderEntity.xml</mapping-file>
+        <mapping-file>ShiftEntity.xml</mapping-file>
+        <mapping-file>TableEntity.xml</mapping-file>
+        <class>se.miun.dt170g.projektdt170g.models.ALaCarteMenuEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.BookingEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.DrinksEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.EmployeeEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.EventsEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.LunchMenuEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.PurchasedALaCarteEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.PurchasedDrinksEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.ReceiptEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.RestaurantOrderEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.ShiftEntity</class>
+        <class>se.miun.dt170g.projektdt170g.models.TableEntity</class>
+
+
+        <properties>
+            <!-- JPA provider-specific properties here -->
+            <!-- No direct JDBC connection properties needed for JTA-managed data source -->
+            <property name="eclipselink.jdbc.url" value="jdbc:mariadb://localhost:3306/dt170gprojekt"/>
+            <property name="eclipselink.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user" value="root"/>
+            <property name="eclipselink.jdbc.password" value="hejhej"/>
+        </properties>
+    </persistence-unit>
+</persistence>

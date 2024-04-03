@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+        <title>Booking Administration</title>
+        <h:outputStylesheet name="css/adminStyle.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="Back" action="#{adminBean.goToMainAdmin()}" styleClass="back-button" immediate="true"/>
+        </h:form>
+        <ui:fragment rendered="#{bookingAdminBean.action == 'begin'}">
+            <h:form>
+            <h:dataTable value="#{bookingAdminBean.bookings}" var="booking" styleClass="booking-table" headerClass="booking-header" rowClasses="booking-row-odd,booking-row-even">
+                <h:column>
+                    <f:facet name="header">Time</f:facet>
+                    #{booking.time}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{booking.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Amount</f:facet>
+                    #{booking.amount}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Telephone</f:facet>
+                    #{booking.telephone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Table Number</f:facet>
+                    <p:inputNumber value="#{bookingAdminBean.tableAssignments[booking.bookingId]}" decimalPlaces="0">
+                        <f:convertNumber integerOnly="true"/>
+                    </p:inputNumber>
+
+
+
+                </h:column>
+                <!-- Add more columns as needed -->
+            </h:dataTable>
+            <h:commandButton value="Assign All" action="#{bookingAdminBean.assignTables}" styleClass="assign-all-button" />
+                <!-- Add more columns as needed -->
+            </h:form>
+        </ui:fragment>
+        <h:outputText value="#{bookingAdminBean.message}" styleClass="message" />
+    </h:body>
+</f:view>
+</html>

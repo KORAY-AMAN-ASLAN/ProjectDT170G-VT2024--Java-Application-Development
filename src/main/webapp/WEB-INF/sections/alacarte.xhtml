@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <section class="menu-container_alacarte" id="alacarte">
+        <img src="resources/images/menyBackground.jpg" alt="Meny Background" class="background-image"/>
+
+        <header class="menu-header">
+            <h1>À la Carte Menu</h1>
+        </header>
+
+        <!-- Förrätter -->
+        <section class="menu-section">
+            <header class="menu-section-header">
+                <h2>Förrätter</h2>
+            </header>
+            <ui:repeat value="#{alaCarteBean.aLaCarteStarter }" var="item" >
+                <article class="menu-item">
+                    <h2>#{item.name}</h2>
+                    <p>#{item.description}</p>
+                    <p>#{item.price}</p>
+                </article>
+            </ui:repeat>
+        </section>
+
+        <!-- Huvudrätter -->
+        <section class="menu-section">
+            <header class="menu-section-header">
+                <h2>Huvudrätter</h2>
+            </header>
+            <ui:repeat value="#{alaCarteBean.aLaCarteMainDish}" var="item" >
+                <article class="menu-item">
+                    <h2>#{item.name}</h2>
+                    <p>#{item.description}</p>
+                    <p>#{item.price}</p>
+                </article>
+            </ui:repeat>
+        </section>
+
+        <!-- Efterrätter -->
+        <section class="menu-section">
+            <header class="menu-section-header">
+                <h2>Efterrätter</h2>
+            </header>
+            <ui:repeat value="#{alaCarteBean.aLaCarteDesert}" var="item" >
+                <article class="menu-item">
+                    <h2>#{item.name}</h2>
+                    <p>#{item.description}</p>
+                    <p>#{item.price}</p>
+                </article>
+            </ui:repeat>
+        </section>
+
+        <footer class="menu-footer">
+            <p class="allergy-info">Har ni allergier eller önskemål, tala med vår personal.</p>
+            <p>Vi använder alltid färska råvaror för bästa kvalitet och smakupplevelse.</p>
+        </footer>
+        <a href="#top" class="top-link">Till Toppen</a>
+    </section>
+</ui:composition>

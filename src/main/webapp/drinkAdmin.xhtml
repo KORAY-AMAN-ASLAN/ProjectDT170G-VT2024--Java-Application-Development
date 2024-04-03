@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+        <title>Drink Administration</title>
+        <h:outputStylesheet name="css/adminStyle.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ui:fragment>
+                <h:commandButton value="Tillbaka" action="#{adminBean.goToMainAdmin()}" styleClass="back-button" immediate="true"/>
+                <h:commandButton value="Lägg till Drink" action="#{drinkAdminBean.setAction('add')}" styleClass="admin-button" update="@form" immediate="true"/>
+                <h:commandButton value="Ändra Drink" action="#{drinkAdminBean.setAction('update')}" styleClass="admin-button" update="@form" immediate="true"/>
+                <h:commandButton value="Ta bort Drink" action="#{drinkAdminBean.setAction('delete')}" styleClass="admin-button" update="@form" immediate="true"/>
+            </ui:fragment>
+
+            <ui:fragment rendered="#{drinkAdminBean.action == 'add'}">
+                <h:panelGrid columns="2">
+                    <h:outputLabel for="drinkName" value="Name:"/>
+                    <h:inputText id="drinkName" value="#{drinkAdminBean.drinkName}" required="true" requiredMessage="The drink name is required."/>
+
+                    <h:outputLabel for="drinkDescription" value="Description:"/>
+                    <h:inputTextarea id="drinkDescription" value="#{drinkAdminBean.drinkDescription}" required="true" requiredMessage="The drink description is required."/>
+
+
+                    <h:outputLabel for="drinkPrice" value="Price:"/>
+                    <h:inputText id="drinkPrice" value="#{drinkAdminBean.drinkPrice}"/>
+
+                    <h:commandButton value="Submit" action="#{drinkAdminBean.addDrink()}" update="@form"/>
+                </h:panelGrid>
+            </ui:fragment>
+
+            <ui:fragment rendered="#{drinkAdminBean.action == 'delete'}">
+                <h:panelGrid columns="2">
+                    <h:outputLabel for="deleteDrinkId" value="Select Drink to Delete:"/>
+                    <h:selectOneMenu id="deleteDrinkId" value="#{drinkAdminBean.drinkIdToDelete}">
+                        <f:selectItem itemLabel="Select Drink" itemValue="null" noSelectionOption="true"/>
+                        <f:selectItems value="#{drinkAdminBean.allDrinks}"
+                                       var="drink"
+                                       itemValue="#{drink.drinkID}" itemLabel="#{drink.name}"/>
+                    </h:selectOneMenu>
+                    <h:commandButton value="Delete drink" action="#{drinkAdminBean.deleteDrink}" update="@form">
+                        <f:ajax execute="@form" render="@form" />
+                    </h:commandButton>
+                </h:panelGrid>
+            </ui:fragment>
+
+            <ui:fragment rendered="#{drinkAdminBean.action == 'update'}">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Select Drink:"/>
+                    <h:selectOneMenu value="#{drinkAdminBean.selectedDrinkId}">
+                        <f:selectItem itemLabel="Select Drink" itemValue="null" noSelectionOption="true"/>
+                        <f:selectItems value="#{drinkAdminBean.allDrinks}" var="drink"
+                                       itemValue="#{drink.drinkID}" itemLabel="#{drink.name} "/>
+                        <f:ajax listener="#{drinkAdminBean.loadSelectedDrink()}" render="@form"/>
+                    </h:selectOneMenu>
+
+                    <h:outputLabel for="updateDrinkName" value="Name:"/>
+                    <h:inputText id="updateDrinkName" value="#{drinkAdminBean.drinkName}" required="true"/>
+
+                    <h:outputLabel for="updateDrinkDescription" value="Description:"/>
+                    <h:inputTextarea id="updateDrinkDescription" value="#{drinkAdminBean.drinkDescription}" required="true"/>
+
+                    <h:outputLabel for="updateDrinkPrice" value="Price:"/>
+                    <h:inputText id="updateDrinkPrice" value="#{drinkAdminBean.drinkPrice}"/>
+
+                    <h:commandButton value="Update Drink" action="#{drinkAdminBean.updateDrink}" update="@form"/>
+                </h:panelGrid>
+            </ui:fragment>
+
+            <h:outputText value="#{drinkAdminBean.message}" styleClass="message"/>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

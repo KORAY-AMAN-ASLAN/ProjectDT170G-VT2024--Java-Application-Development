@@ -1,0 +1,167 @@
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.content-container{
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    padding-bottom: 1rem;
+    border-radius: 10px; /* Rounded corners */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow */
+    width: 60%; /* Adjusted width for a more modern look */
+
+}
+
+
+
+.close {
+    position: absolute;
+    right: 3%;
+    top: 20%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.guestBtnList {
+    list-style: none;
+    padding: 2rem;
+    width: 70%;
+    margin:0 auto;
+}
+
+.guestAmountBtn, .guestAmountOverLimitBtn {
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9; /* Light background for the list items */
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.guestAmountBtn:hover, .guestAmountOverLimitBtn:hover{
+    border-color: #000;
+    background-color: #e9ecef; /* Slightly darker on hover/focus */
+    outline: none; /* Ensure no outline on focus as well */
+}
+
+.back-arrow {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
+.close:hover,
+.back-arrow:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.content-container button,
+.continue-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    color: #000;
+    background-color:  #ffb703; /* Darker gold on hover for interaction feedback */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.content-container button:hover, .continue-btn:hover {
+    opacity: 0.8;
+}
+
+.booking-titel {
+    position: relative;
+    background-color: #f2f2f2; /* Lighter shade for a modern look */
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px; /* Rounded corners */
+    border-top-left-radius: 10px; /* Rounded corners */
+
+}
+
+#modalTitle1, #modalTitle2, #modalTitle3 {
+    color: #333; /* Darker text for better readability */
+    margin: 0;
+    font-size: 24px; /* Larger font size for titles */
+}
+
+select, input[type="date"], input[type="text"], input[type="tel"] {
+    width: calc(100% - 40px); /* Full width minus padding */
+    margin: 10px 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in element's width */
+}
+
+input[type="text"], input[type="tel"] {
+    height: 44px; /* Fixed height for text inputs */
+}
+.header-booking{
+    text-align: center;
+    padding: 1rem;
+}
+
+.inputHeader {
+    margin-left: 1.5rem;
+}
+
+#moreThanSixInfo, #invalidDateTimeInput, #invalidNamePhoneInput, #fullBooked{
+    max-width: 70%;
+    text-align: center;
+    border: #666666 1px solid;
+    margin: 2% auto 0;
+    padding: 0.3rem;
+    display: none;
+}
+
+
+/* On screens that are 992px wide or less */
+@media screen and (max-width: 700px) {
+    .content-container{
+        width: 100%;
+    }
+    #modalTitle1, #modalTitle2, #modalTitle3 {
+        font-size: 1rem; /* Larger font size for titles */
+    }
+}
+
+body.modal-open,
+html.modal-open {
+    overflow: hidden !important;
+}
+
+#bookingDetails {
+    font-size: 16px; /* Sets the font size */
+    font-family: Arial, sans-serif; /* Sets the font family */
+    color: #333; /* Sets the text color */
+    padding: 20px; /* Adds space around the text */
+    background-color: #f0f0f0; /* Sets a background color */
+    border-radius: 8px; /* Adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    margin: 20px 0; /* Adds margin above and below the element */
+}

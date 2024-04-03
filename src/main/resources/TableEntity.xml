@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g.projektdt170g.models.TableEntity">
+        <table name="tables" schema="dt170gprojekt" catalog=""/>
+        <attributes>
+            <id name="tableNumber">
+                <column name="table_number" precision="11"/>
+            </id>
+            <basic name="status">
+                <column name="status"/>
+            </basic>
+            <basic name="tableSize">
+                <column name="table_size"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

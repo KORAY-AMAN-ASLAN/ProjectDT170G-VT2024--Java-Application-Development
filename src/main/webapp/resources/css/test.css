@@ -1,0 +1,56 @@
+/* Custom Styles for PrimeFaces Dialog */
+.ui-dialog .ui-dialog-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background-color: #f2f2f2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Styling for buttons */
+.ui-button.first_page_btn {
+    background-color: #ffb703;
+    color: #000;
+    border-radius: 5px;
+    border: none;
+}
+
+.ui-button.first_page_btn:hover {
+    opacity: 0.8;
+}
+
+/* Custom Styles for SelectOneListbox */
+.ui-selectonelistbox .ui-selectonelistbox-list {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ui-selectonelistbox-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid transparent; /* Hide individual borders */
+}
+
+.ui-selectonelistbox-item.ui-state-highlight {
+    background-color: #87b0ff; /* Highlight color when selected */
+    color: #000;
+    border-color: #000;
+}
+
+/* Custom Input Text */
+.ui-inputfield, .ui-inputmask {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Content Container */
+.content-container {
+    padding: 20px;
+}

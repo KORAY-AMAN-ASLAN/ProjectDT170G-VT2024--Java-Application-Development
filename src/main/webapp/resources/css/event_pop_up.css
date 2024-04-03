@@ -1,0 +1,89 @@
+/* Popup styling */
+.popup {
+    display: none;
+    position: fixed;
+    left: 2%;
+    bottom: 5%;
+    min-width: 200px;
+    max-width: 300px;
+    background: #ffb703; /* Light background color */
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+    padding: 15px;
+}
+
+/* Popup content styling */
+.popup-content {
+    position: relative;
+    color: #000000; /* Black color for better visibility */
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+#popupHeader {
+    color: #000000; /* Black for high contrast */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+#popupText {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #000000; /* Black for readability */
+}
+
+/* List styles */
+#popupList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#popupList li {
+    background: #fff; /* Consider changing this if needed for design coherence */
+    color: #000000; /* Black text for readability */
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Button styles */
+#pop_btn, .action-btn {
+    background: #fff; /* Contrast background for the button */
+    color: #000000; /* Black text for the button for readability */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
+}
+
+#pop_btn:hover, .action-btn:hover {
+    background-color: #fff; /* Darker shade for hover effect */
+}
+
+/* Close button styles */
+.close-btn {
+    cursor: pointer;
+    color: #000000; /* Black for visibility */
+    position: absolute;
+    right: 0.5rem;
+    top: -0.5rem;
+    border: none;
+    background: none;
+    font-size: 24px;
+    z-index: 1001;
+}
+
+.close-btn:hover {
+    color: #dddddd; /* Lighter shade for hover effect, consider if black is needed */
+}

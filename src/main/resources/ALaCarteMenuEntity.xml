@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g.projektdt170g.models.ALaCarteMenuEntity">
+        <table name="a_la_carte_menu" schema="dt170gprojekt" catalog=""/>
+        <attributes>
+            <id name="aLaCarteId">
+                <column name="a_la_carte_id" precision="11"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="description">
+                <column name="description"/>
+            </basic>
+            <basic name="type">
+                <column name="type"/>
+            </basic>
+            <basic name="price">
+                <column name="price" precision="11"/>
+            </basic>
+            <one-to-many name="purchasedALaCartesByALaCarteId" mapped-by="aLaCarteMenuByALaCarteId"
+                         target-entity="se.miun.dt170g.projektdt170g.models.PurchasedALaCarteEntity"/>
+        </attributes>
+    </entity>
+</entity-mappings>

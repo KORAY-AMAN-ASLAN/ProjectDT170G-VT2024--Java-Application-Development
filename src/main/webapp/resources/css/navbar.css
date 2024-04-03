@@ -1,0 +1,73 @@
+.header-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.logo {
+    width: 200px; /* Adjust if necessary */
+    height: 200px;
+
+}
+
+.nav-toggle {
+    position: fixed;
+    border: none;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    right: 5%;
+    padding: 1%;
+    background: rgba(0, 0, 0, 0.3) none;
+    margin-right: auto;
+    margin-left: auto;
+    transition: transform .4s;
+}
+
+.nav-toggle:hover {
+    transform: scale(1.2);
+
+}
+
+.main-nav {
+    z-index: 10000;
+    position: relative;
+}
+
+.main-nav .menu {
+    list-style-type: none;
+    position: fixed; /* Position the menu below the toggle */
+    background-color: #333; /* Match the header background color */
+    right: 0;
+    top: 23%;
+    width: 200px; /* Width of the dropdown menu */
+    display: none;
+}
+
+.main-nav .menu.is-active {
+    display: block; /* Show the menu when is-active is added */
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #474747; /* Add a border between items */
+}
+
+.menu li:last-child a {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+#image_bg {
+    position: fixed;
+    z-index: -1;
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
